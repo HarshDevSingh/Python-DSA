@@ -79,6 +79,8 @@ class LinkedList:
         return "node deleted successfully"
 
     def bulk_insert(self, data_list=[], at_end=True):
+        if len(data_list)<1:
+            return "Please provide list of data"
         for data in data_list:
             print(data)
             if at_end:
@@ -97,4 +99,6 @@ ll.insert_at_begining(6)
 ll.bulk_insert(data_list=[3,2,1])
 print(ll.print_ll())
 ll.bulk_insert(data_list=[8,9,10],at_end=False)
+print(ll.print_ll())
+ll.bulk_insert(data_list=[])
 print(ll.print_ll())
