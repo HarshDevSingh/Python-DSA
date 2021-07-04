@@ -78,19 +78,23 @@ class LinkedList:
             itr = itr.next
         return "node deleted successfully"
 
+    def bulk_insert(self, data_list=[], at_end=True):
+        for data in data_list:
+            print(data)
+            if at_end:
+                self.insert_at_end(data)
+            else:
+                self.insert_at_begining(data)
+        return "data inserted, successfully!"
+
 
 
 
 ll = LinkedList()
-ll.insert_at_begining(3)
 ll.insert_at_begining(4)
 ll.insert_at_begining(5)
-ll.insert_at_end(2)
-ll.insert_at_end(1)
-print(ll.insert_at_loc(2,0))
+ll.insert_at_begining(6)
+ll.bulk_insert(data_list=[3,2,1])
 print(ll.print_ll())
-ll.remove_at(0)
+ll.bulk_insert(data_list=[8,9,10],at_end=False)
 print(ll.print_ll())
-ll.remove_at(1)
-print(ll.print_ll())
-
