@@ -82,7 +82,6 @@ class LinkedList:
         if len(data_list)<1:
             return "Please provide list of data"
         for data in data_list:
-            print(data)
             if at_end:
                 self.insert_at_end(data)
             else:
@@ -96,9 +95,6 @@ ll = LinkedList()
 ll.insert_at_begining(4)
 ll.insert_at_begining(5)
 ll.insert_at_begining(6)
-ll.bulk_insert(data_list=[3,2,1])
+ll.insert_at_loc(1,0)
 print(ll.print_ll())
-ll.bulk_insert(data_list=[8,9,10],at_end=False)
-print(ll.print_ll())
-ll.bulk_insert(data_list=[])
-print(ll.print_ll())
+
