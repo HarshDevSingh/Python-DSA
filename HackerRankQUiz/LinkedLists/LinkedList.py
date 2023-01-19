@@ -32,43 +32,43 @@ class LinkedList:
             itr = itr.next
         return l
 
-    def insert_at_end(self,data):
-        itr =self.head
+    def insert_at_end(self, data):
+        itr = self.head
         if not self.head:
             self.insert_at_begining(data)
             return
         while itr.next:
-            itr=itr.next
-        itr.next=Node(data)
+            itr = itr.next
+        itr.next = Node(data)
         return
 
-    def insert_at_loc(self,index,data):
-        if index <0 or index not in range(self.get_length()):
+    def insert_at_loc(self, index, data):
+        if index < 0 or index not in range(self.get_length()):
             return "invalid index"
-        itr=self.head
+        itr = self.head
         if index == 0:
             self.insert_at_begining(data)
             return "inserted at begining"
-        if index == self.get_length()-1:
+        if index == self.get_length() - 1:
             self.insert_at_end(data)
             return "inserted at end"
-        count=0
+        count = 0
         while itr:
-            if count == index-1:
-                node=Node(data,itr.next)
-                itr.next=node
+            if count == index - 1:
+                node = Node(data, itr.next)
+                itr.next = node
                 break
-            count+=1
-            itr=itr.next
+            count += 1
+            itr = itr.next
         return f"{data},inserted successfully at index:{index}"
 
-    def remove_at(self,index):
-        if index <0 or index not in range(self.get_length()):
+    def remove_at(self, index):
+        if index < 0 or index not in range(self.get_length()):
             return "invalid index"
         if index == 0:
-            self.head=self.head.next
+            self.head = self.head.next
             return "node deleted successfully"
-        itr=self.head
+        itr = self.head
         count = 0
         while itr:
             if count == index - 1:
@@ -79,7 +79,7 @@ class LinkedList:
         return "node deleted successfully"
 
     def bulk_insert(self, data_list=[], at_end=True):
-        if len(data_list)<1:
+        if len(data_list) < 1:
             return "Please provide list of data"
         for data in data_list:
             if at_end:
@@ -89,12 +89,11 @@ class LinkedList:
         return "data inserted, successfully!"
 
 
-
-
 ll = LinkedList()
 ll.insert_at_begining(4)
 ll.insert_at_begining(5)
 ll.insert_at_begining(6)
-ll.insert_at_loc(1,0)
+ll.insert_at_loc(1, 0)
 print(ll.print_ll())
-
+ll.remove_at(3)
+print(ll.print_ll())
